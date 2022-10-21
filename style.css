@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: steelblue;
+  background-color: rgb(70, 180, 83);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,17 +13,17 @@ body {
 }
 
 .empty {
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 250px;
   margin: 10px;
   border: solid 3px black;
-  background: white;
+  background: rgb(212, 223, 17);
 }
 
 .fill {
   background-image: url('https://source.unsplash.com/random/150x150');
-  height: 145px;
-  width: 145px;
+  height: 245px;
+  width: 245px;
   cursor: pointer;
 }
 
