@@ -3,42 +3,91 @@
 }
 
 body {
-  background-color: rgb(70, 180, 83);
+  margin: 0;
+  padding: 0;
+  background-color: rgb(136, 255, 150);
+}
+
+.container {
+  background-color: rgb(136, 255, 150);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   overflow: hidden;
   margin: 0;
+  padding: 0;
 }
 
-.empty {
+.dropZone {
   height: 250px;
   width: 250px;
   margin: 10px;
   border: solid 3px black;
   background: rgb(212, 223, 17);
+  top: 20px;
+  bottom: 25%;
+  border-radius: 50%;
 }
 
-.fill {
+h1 {
+  color:rgb(3, 19, 20);
+  background-color: rgb(136, 255, 150);
+  display: flex;
+  height: 20vh;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+[name = one] {
+  background: rgb(214, 10, 10);
+  
+}
+
+[name = two] {
+  background: rgb(8, 8, 177);
+  
+}
+
+[name = three] {
+  background: rgb(111, 0, 255);
+  
+}
+
+[name = four] {
+  background: rgb(204, 255, 0);
+  
+}
+
+[name = five] {
+  background: rgb(224, 160, 21);
+  
+}
+
+.image {
   background-image: url('https://source.unsplash.com/random/150x150');
   height: 245px;
   width: 245px;
   cursor: pointer;
+  border-radius: 50%;
 }
 
-.hold {
-  border: solid 5px #ccc;
+.holding {
+  border: solid 5px rgb(237, 32, 9);
+  opacity: 0.5;
 }
 
 .hovered {
   background-color: #333;
   border-color: white;
   border-style: dashed;
+  opacity: 0.2;
 }
 
 @media (max-width: 800px) {
   body {
-    flex-direction: column;
+    flex-direction:row;
   }
 }
