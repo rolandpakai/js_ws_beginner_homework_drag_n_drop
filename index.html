@@ -10,11 +10,44 @@
 </head>
   <body>
     <div class="empty">
-      <div class="fill" draggable="true"></div>
+      <div class="fill" draggable="true" id="myDraggableElement"></div>
     </div>
     <div class="empty"></div>
     <div class="empty"></div>
     <div class="empty"></div>
     <div class="empty"></div>
+
+    <script>
+      const draggableElement = document.querySelector("#myDraggableElement");
+
+      draggableElement.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("text/plain", draggableElement.id);        
+      });
+
+      for (const dropZone of document.querySelectorAll(".empty")){
+        // When the draggable element is over the drop zone
+        dropZone.addEventListener("dragover", e => {
+          e.preventDefault();
+          dropZone.classList.add("hovered");
+        });
+        
+        // When the draggable element is no longer over the drop zone
+        dropZone.addEventListener("dragleave", e =>{
+          dropZone.classList.remove("hovered");
+          dropZone.classList.add("hold");
+        });
+
+        // When the draggable element is dropped onto the drop zone
+        dropZone.addEventListener("drop", e => {
+          e.preventDefault();
+          
+          const droppedElementId = e.dataTransfer.getData("text/plain");
+          const droppedElement = document.getElementById(droppedElementId);
+
+          dropZone.appendChild(droppedElement);
+          dropZone.classList.remove("hovered");
+        });
+      }
+    </script>
   </body>
 </html>
